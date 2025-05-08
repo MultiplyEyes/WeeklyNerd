@@ -1,0 +1,138 @@
+:root{
+    --layer-height: fit-content;
+    --layer-width: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header{
+    margin: 0;
+    background-color: #def3f6;
+    width: var(--layer-width);
+    height: 150px;
+}
+
+
+.layer{
+    width: var(--layer-width);
+    height: var(--layer-height);
+}
+
+.first{
+    background-color: #7fcdff;
+}
+
+.first:before{
+    background-color: #def3f6;
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 100vw;
+    left: 0;
+    -webkit-clip-path: polygon(1% 0%, 4% 50%, 9% 0%, 13% 50%, 19% 1%, 21% 50%, 26% 5%, 30% 50%, 36% 2%, 43% 50%, 50% 1%, 52% 50%, 61% 0%, 69% 44%, 30% 0%, 76% 50%, 81% 0%, 84% 100%, 91% 0%, 97% 100%, 99% 3%);
+}
+
+.second{
+    background-color: #1da2d8;
+    ul{
+        height: 200px;
+    }
+}
+.second:before{
+    background-color: #7fcdff;
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 100vw;
+    left: 0;
+    -webkit-clip-path: polygon(1% 0%, 4% 50%, 9% 0%, 13% 50%, 19% 1%, 21% 50%, 26% 5%, 30% 50%, 36% 2%, 43% 50%, 50% 1%, 52% 50%, 61% 0%, 69% 44%, 30% 0%, 76% 50%, 81% 0%, 84% 100%, 91% 0%, 97% 100%, 99% 3%);
+}
+
+.third{
+    background-color: #5466c1;
+}
+.third:before{
+    background-color: #1da2d8;
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 100vw;
+    left: 0;
+    -webkit-clip-path: polygon(1% 0%, 4% 50%, 9% 0%, 13% 50%, 19% 1%, 21% 50%, 26% 5%, 30% 50%, 36% 2%, 43% 50%, 50% 1%, 52% 50%, 61% 0%, 69% 44%, 30% 0%, 76% 50%, 81% 0%, 84% 100%, 91% 0%, 97% 100%, 99% 3%);
+}
+
+ul {
+    margin: auto;
+    width: 50vw;
+    height: 600px;
+    padding: 20px;
+    display: flex;
+    gap: 4vw;
+}
+
+@media screen and (max-width: 800px) {
+    ul {
+        width: 80vw;
+        height: 80vh;
+    }
+}
+
+li {
+    list-style-type: none;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 20px;
+  
+    flex: 0 0 100%;
+    border-radius: 0.5rem;
+    overflow: auto;
+}
+
+ul {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+li {
+    scroll-snap-align: center;
+    opacity: 0.8;
+}
+
+ul::scroll-button(*) {
+    border: 0;
+    font-size: 2rem;
+    background: none;
+    color: rgb(0 0 0 / 0.7);
+    cursor: pointer;
+}
+
+ul::scroll-button(*):hover,
+ul::scroll-button(*):focus {
+    color: rgb(0 0 0 / 1);
+}
+
+ul::scroll-button(*):active {
+    translate: 1px 1px;
+}
+
+ul::scroll-button(*):disabled {
+    color: rgb(0 0 0 / 0.2);
+    cursor: unset;
+}
+ul::scroll-button(left) {
+    content: "◄";
+}
+
+ul::scroll-button(right) {
+    content: "►";
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
