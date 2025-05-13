@@ -4,15 +4,23 @@ let isHolding = false;
 const box = document.getElementById('box');
 const replace = document.getElementById('replace');
 
+
+let fishing = document.getElementById('fishing');
+let value;
+
 function updateDisplay() {
     replace.innerText = "Mousepoints: " + inputNum;
+    value = inputNum * 0.01;
+    fishing.style.transform = `scale(1, ${value})`;
 }
 
 function startIncrementing() {
     if (intervalId) clearInterval(intervalId);
     intervalId = setInterval(() => {
+        if (inputNum < 100) {
         inputNum++;
         updateDisplay();
+        }
     }, 100);
 }
 
